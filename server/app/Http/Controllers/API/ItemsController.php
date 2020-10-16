@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Items;
+use App\Models\Item;
 use Illuminate\Http\Request;
 
 class ItemsController extends Controller
@@ -16,7 +16,7 @@ class ItemsController extends Controller
     public function index()
     {
         //
-        return Items::all();
+        return Item::all();
     }
 
     /**
@@ -33,7 +33,7 @@ class ItemsController extends Controller
         ]);
 
         //
-        return Items::create($request->all());
+        return Item::create($request->all());
     }
 
     /**
@@ -45,7 +45,7 @@ class ItemsController extends Controller
     public function show($id)
     {
         //
-        return Items::find($id);
+        return Item::find($id);
     }
 
     /**
@@ -58,20 +58,20 @@ class ItemsController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $items = Items::find($id);
-        $items->update($request->all());
-        return $items;
+        $item = Item::find($id);
+        $item->update($request->all());
+        return $item;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Items  $items
+     * @param  \App\Models\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Items $items)
+    public function destroy(Item $item)
     {
         //
-        return Items::destroy($items);
+        return Item::destroy($item);
     }
 }
