@@ -16,7 +16,7 @@ $ cd server
 $ composer install
 ```
 #### Variables de entorno 
-Es necesario modificar las variables correspondientes a la conexión de base de datos incluidas en el archivo `.env` (en caso de no existir el archivo, se puede crear usando como base `.env.example`)
+Es necesario modificar las variables correspondientes a la conexión de base de datos incluidas en el archivo `.env` (en caso de no existir el archivo luego de la instalación de composer, se puede crear usando como base `.env.example`)
 ```
 ...
 DB_HOST=127.0.0.1
@@ -26,6 +26,12 @@ DB_USERNAME=root
 DB_PASSWORD=
 ...
 ```
+###### Creación de llaves para Laravel y JTW (Solo en caso de crear `.env` manualmente)
+```sh
+$ php artisan key:generate --ansi
+$ php artisan jwt:secret
+```
+
 #### Migración y Datos de ejemplo
 Los comandos `migrate` y `db:seed` se puede ejecutar únicamente después de configurar las variables de entorno correspondientes a la base de datos.
 * ##### Migración
