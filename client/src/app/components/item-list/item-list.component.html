@@ -1,22 +1,19 @@
-<div class="col-12">
+<nav class="col-12">
   <a class="btn p-2" routerLink="/items/add" *ngIf="globals.isSignedIn">Add Item</a>
   <button class="btn" (click)="getItems()">Active Items</button>
   <button class="btn" (click)="getAllItems()">All Items</button>
   <button class="btn" (click)="getTrashItems()">Trash Items</button>
-</div>
+</nav>
 <div class="col-12 col-sm-6 col-md-4" *ngFor="let item of items">
   <div class="card">
     <img [src]="item.photo" [alt]="item.title"/>
     <h4>{{ item.title }}</h4>
     <p>{{ item.description }}</p>
-    <p>{{ item.created_at }}</p>
-    <p>{{ item.updated_at }}</p>
-    <p>{{ item.deleted_at }}</p>
     <div class="buttons">
       <a class="btn" [routerLink]="['/items/edit', item.id]">Edit</a>
-      <button class="btn" (click)="deleteItem(item.id)">Trash</button>
-      <button class="btn" (click)="deleteHardItem(item.id)">Delete</button>
-      <button class="btn" (click)="restoreItem(item.id)">Restore</button>
+      <button class="btn" (click)="deleteItem(item.id)" *ngIf="!item.deleted_at">Trash</button>
+      <button class="btn" (click)="deleteHardItem(item.id)" *ngIf="item.deleted_at">Delete</button>
+      <button class="btn" (click)="restoreItem(item.id)" *ngIf="item.deleted_at">Restore</button>
     </div>
   </div>
 </div>
