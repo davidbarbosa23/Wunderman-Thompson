@@ -31,7 +31,7 @@
     </div>
     <div class="col-12 col-sm-6">
       <div class="card">
-        <img [src]="itemForm.value.photo == '' ? '/assets/add-image.png' : itemForm.value.photo" />
+        <img [src]="itemForm.value.photo == '' ? 'https://fakeimg.pl/600x600/?text=IMAGE' : itemForm.value.photo" />
         <h4>{{ itemForm.value.title == '' ? 'Some title' : itemForm.value.title }}</h4>
         <p>{{ itemForm.value.description == '' ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a tempor ex, id scelerisque nisl.' : itemForm.value.description }}</p>
       </div>
