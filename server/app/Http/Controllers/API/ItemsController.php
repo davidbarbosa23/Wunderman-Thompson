@@ -14,7 +14,7 @@ class ItemsController extends Controller
      * @return void
      */
     public function __construct() {
-        $this->middleware('auth:api', ['except' => ['index', 'deleted', 'withDeleted', 'show',]]);
+        $this->middleware('auth:api', ['except' => ['index']]);
     }
 
     /**
