@@ -1,38 +1,39 @@
 import { Injectable } from '@angular/core';
 
+import { Globals } from './globals';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class TokenService {
-
   private issuer = {
-    login: 'https://wunderman-thompson.test/api/auth/login',
-    register: 'https://wunderman-thompson.test/api/auth/register'
-  }
+    login: this.globals.API_URI + '/auth/login',
+    register: this.globals.API_URI + '/auth/register',
+  };
 
-  constructor() { }
+  constructor(private globals: Globals) { }
 
-  handleData(token){
+  handleData(token) {
     localStorage.setItem('auth_token', token);
   }
 
-  getToken(){
+  getToken() {
     return localStorage.getItem('auth_token');
   }
 
   // Verify the token
-  isValidToken(){
-     const token = this.getToken();
+  isValidToken() {
+    const token = this.getToken();
 
-     if(token){
-       const payload = this.payload(token);
-       if(payload){
-         return Object.values(this.issuer).indexOf(payload.iss) > -1 ? true : false;
-       }
-     } else {
-        return false;
-     }
+    if (token) {
+      const payload = this.payload(token);
+      if (payload) {
+        return Object.values(this.issuer).indexOf(payload.iss) > -1
+          ? true
+          : false;
+      }
+    } else {
+      return false;
+    }
   }
 
   payload(token) {
@@ -46,8 +47,7 @@ export class TokenService {
   }
 
   // Remove token
-  removeToken(){
+  removeToken() {
     localStorage.removeItem('auth_token');
   }
-
 }
