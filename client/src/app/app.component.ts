@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private auth: AuthStateService,
-    private globals: Globals,
+    public globals: Globals,
     public router: Router,
     public token: TokenService
   ) {}
