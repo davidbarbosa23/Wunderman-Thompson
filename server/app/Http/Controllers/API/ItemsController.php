@@ -14,7 +14,7 @@ class ItemsController extends Controller
      * @return void
      */
     public function __construct() {
-        $this->middleware('auth:api', ['except' => ['index', 'show']]);
+        $this->middleware('auth:api', ['except' => ['index', 'deleted', 'withDeleted', 'show',]]);
     }
 
     /**
@@ -26,6 +26,28 @@ class ItemsController extends Controller
     {
         //
         return Item::all();
+    }
+
+    /**
+     * Display a listing of the resource only Deleted.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deleted()
+    {
+        //
+        return Item::onlyTrashed()->get();
+    }
+
+    /**
+     * Display a listing of the resource with Deleted.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function withDeleted()
+    {
+        //
+        return Item::withTrashed()->get();
     }
 
     /**
@@ -82,5 +104,41 @@ class ItemsController extends Controller
     {
         //
         return Item::destroy($id);
+    }
+
+    /**
+     * Disable the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function hardDestroy($id)
+    {
+        //
+        $item = Item::onlyTrashed()->find($id);
+
+        if (!is_null($item)) {
+            return $item->forceDelete();
+        }
+
+        return $item;
+    }
+
+    /**
+     * Restore the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function restore($id)
+    {
+        //
+        $item = Item::onlyTrashed()->find($id);
+
+        if (!is_null($item)) {
+            return $item->restore();
+        }
+
+        return $item;
     }
 }
