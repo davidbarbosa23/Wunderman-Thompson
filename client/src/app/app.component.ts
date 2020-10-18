@@ -11,7 +11,6 @@ import { Globals } from './shared/globals';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-
   constructor(
     private auth: AuthStateService,
     public globals: Globals,

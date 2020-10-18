@@ -3,13 +3,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ItemsService } from './../../services/items.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
+import { Globals } from '../../shared/globals';
+
 @Component({
   selector: 'app-item-form',
   templateUrl: './item-form.component.html',
   styleUrls: ['./item-form.component.scss'],
 })
 export class ItemFormComponent implements OnInit {
-  @HostBinding('class') classes = 'row';
+  @HostBinding('class') classes = 'container';
 
   itemForm: FormGroup;
   edit: boolean = false;
@@ -18,6 +20,7 @@ export class ItemFormComponent implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
+    public globals: Globals,
     public fb: FormBuilder,
     public itemsService: ItemsService
   ) {
@@ -50,9 +53,7 @@ export class ItemFormComponent implements OnInit {
           console.log(result);
           this.router.navigate(['items']);
         },
-        (error) => {
-          this.errors = error.error;
-        }
+        (error) => this.handleError(error)
       );
     } else {
       this.itemsService.createItem(this.itemForm.value).subscribe(
@@ -60,10 +61,16 @@ export class ItemFormComponent implements OnInit {
           console.log(result);
           this.router.navigate(['items']);
         },
-        (error) => {
-          this.errors = error.error;
-        }
+        (error) => this.handleError(error)
       );
+    }
+  }
+
+  handleError(error) {
+    if (error.status == 401) {
+    } else {
+      this.errors = error.error;
+      console.log(error);
     }
   }
 }

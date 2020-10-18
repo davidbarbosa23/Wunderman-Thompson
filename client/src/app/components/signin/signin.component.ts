@@ -11,7 +11,7 @@ import { AuthStateService } from '../../shared/auth-state.service';
   styleUrls: ['./signin.component.scss'],
 })
 export class SigninComponent implements OnInit {
-  @HostBinding('class') classes = 'row';
+  @HostBinding('class') classes = 'container';
 
   loginForm: FormGroup;
   errors = null;

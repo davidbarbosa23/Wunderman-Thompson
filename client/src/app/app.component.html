@@ -1,22 +1,22 @@
 <header>
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top">
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 py-md-4 px-md-6 bg-primary">
     <a class="my-0 mr-md-auto" routerLink="/"><img src="/assets/logo-wunderman-thompson.svg" alt="Wunderman Thompson"></a>
     <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2" routerLink="/">Home</a>
-      <a class="p-2" routerLinkActive="active" routerLink="/items" *ngIf="globals.isSignedIn">Items</a>
-      <a class="p-2" routerLinkActive="active" routerLink="/profile" *ngIf="globals.isSignedIn">Profile</a>
-      <a class="p-2" routerLinkActive="active" routerLink="/login" *ngIf="!globals.isSignedIn" >Login</a>
-      <a class="p-2" routerLinkActive="active" routerLink="/register" *ngIf="!globals.isSignedIn">Register</a>
+      <a class="p-2 text-white" routerLink="/">Home</a>
+      <a class="p-2 text-white" routerLinkActive="active" routerLink="/items" *ngIf="globals.isSignedIn">Items</a>
+      <a class="p-2 text-white" routerLinkActive="active" routerLink="/profile" *ngIf="globals.isSignedIn">Profile</a>
+      <a class="p-2 text-white" routerLinkActive="active" routerLink="/login" *ngIf="!globals.isSignedIn" >Login</a>
+      <a class="p-2 text-white" routerLinkActive="active" routerLink="/register" *ngIf="!globals.isSignedIn">Register</a>
     </nav>
-    <button class="btn btn-outline-primary" (click)="signOut()" *ngIf="globals.isSignedIn">Logout</button>
+    <button class="btn btn-outline-light" (click)="signOut()" *ngIf="globals.isSignedIn">Logout</button>
   </div>
 </header>
 
-<div class="container">
+<div [ngClass]="router.url === '/' ? ['container-fluid bg-primary-light text-white'] : ['container-fluid']"></div>
   <router-outlet></router-outlet>
 </div>
 
-<footer>
-  <h4>We Inspire Growth</h4>
-  <p>Data Team @ Wunderman Thompson Co</p>
+<footer class="bg-primary text-light text-center p-5">
+  <h4 class="m-0">We Inspire Growth</h4>
+  <p class="m-0"><small>Data Team @ Wunderman Thompson Co</small></p>
 </footer>

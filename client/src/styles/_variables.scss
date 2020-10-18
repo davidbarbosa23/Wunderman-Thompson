@@ -1,3 +1,98 @@
+// GrayScale
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+// Colors
+$blue:      #063BAF;
+$blue-light:#0D4BE3;
+$indigo:    #6610f2;
+$purple:    #6f42c1;
+$pink:      #e83e8c;
+$red:       #dc3545;
+$orange:    #EC4E20;
+$yellow:    #ffc107;
+$green:     #28a745;
+$teal:      #20c997;
+$cyan:      #17a2b8;
+
+// Theme Colors
+$primary: $blue ;
+$primary-light: $blue-light;
+$secondary: $orange;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-800;
+
+$grays: () !default;
+$grays: map-merge(
+  (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+  ),
+  $grays
+);
+
+// Theme Colors
+$colors: () !default;
+$colors: map-merge(
+  (
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-800
+  ),
+  $colors
+);
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    "primary":       $primary,
+    "primary-light": $primary-light,
+    "secondary":     $secondary,
+    "success":       $success,
+    "info":          $info,
+    "warning":       $warning,
+    "danger":        $danger,
+    "light":         $light,
+    "dark":          $dark
+  ),
+  $theme-colors
+);
+
+// Border Radius
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: () !default;
 $sizes: map-merge(
@@ -19,6 +114,20 @@ $sizes: map-merge(
   $sizes
 );
 
-$border-radius: 0;
-$border-radius-lg: 0;
-$border-radius-sm: 0;
+// Spacers
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+    6: ($spacer * 4.5),
+    7: ($spacer * 6),
+    8: ($spacer * 8.5)
+  ),
+  $spacers
+);

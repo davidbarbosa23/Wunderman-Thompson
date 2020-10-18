@@ -11,7 +11,7 @@ import { Globals } from '../../shared/globals';
   styleUrls: ['./item-list.component.scss'],
 })
 export class ItemListComponent implements OnInit {
-  @HostBinding('class') classes = 'row';
+  @HostBinding('class') classes = 'container';
 
   items: Item[] = [];
   errors = null;
@@ -31,9 +31,7 @@ export class ItemListComponent implements OnInit {
       (result: []) => {
         this.items = result;
       },
-      (error) => {
-        console.error(error);
-      }
+      (error) => this.handleError(error)
     );
   }
 
@@ -42,9 +40,7 @@ export class ItemListComponent implements OnInit {
       (result: []) => {
         this.items = result;
       },
-      (error) => {
-        console.error(error);
-      }
+      (error) => this.handleError(error)
     );
   }
 
@@ -53,9 +49,7 @@ export class ItemListComponent implements OnInit {
       (result: []) => {
         this.items = result;
       },
-      (error) => {
-        console.error(error);
-      }
+      (error) => this.handleError(error)
     );
   }
 
@@ -65,9 +59,7 @@ export class ItemListComponent implements OnInit {
         console.log(result);
         this.getItems();
       },
-      (error) => {
-        this.errors = error.error;
-      }
+      (error) => this.handleError(error)
     );
   }
 
@@ -77,9 +69,7 @@ export class ItemListComponent implements OnInit {
         console.log(result);
         this.getTrashItems();
       },
-      (error) => {
-        this.errors = error.error;
-      }
+      (error) => this.handleError(error)
     );
   }
 
@@ -89,9 +79,14 @@ export class ItemListComponent implements OnInit {
         console.log(result);
         this.getItems();
       },
-      (error) => {
-        this.errors = error.error;
-      }
+      (error) => this.handleError(error)
     );
+  }
+
+  handleError(error) {
+    if (error.status == 401) {
+    } else {
+      console.log(error);
+    }
   }
 }
