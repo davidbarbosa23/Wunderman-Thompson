@@ -20,7 +20,7 @@ export class ItemsService {
     return this.http.get(`${this.globals.API_URI}/items/${id}`);
   }
 
-  updateItem(updatedItem: Item, id: String): Observable<Item> {
+  updateItem(id: String, updatedItem: Item): Observable<Item> {
     return this.http.put(`${this.globals.API_URI}/items/${id}`, updatedItem);
   }
 

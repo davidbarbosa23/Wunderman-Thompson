@@ -10,7 +10,7 @@
     <p>{{ item.updated_at }}</p>
     <p>{{ item.deleted_at }}</p>
     <div>
-      <button>Edit</button>
+      <a [routerLink]="['/items/edit', item.id]">Edit</a>
       <button>Disable</button>
       <button (click)="deleteItem(item.id)">Delete</button>
     </div>

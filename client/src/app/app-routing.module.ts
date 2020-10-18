@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'profile', component: UserProfileComponent },
   { path: 'items', component: ItemListComponent },
   { path: 'items/add', component: ItemFormComponent },
+  { path: 'items/edit/:id', component: ItemFormComponent },
 ];
 
 @NgModule({
