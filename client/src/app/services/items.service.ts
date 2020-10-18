@@ -28,7 +28,7 @@ export class ItemsService {
     return this.http.post(`${this.globals.API_URI}/items`, item);
   }
 
-  deleteItem(id: String) {
+  deleteItem(id: Number) {
     return this.http.delete(`${this.globals.API_URI}/items/${id}`);
   }
 }

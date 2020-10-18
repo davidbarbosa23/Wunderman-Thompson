@@ -14,20 +14,40 @@ export class ItemListComponent implements OnInit {
   @HostBinding('class') classes = 'row';
 
   items: Item[] = [];
+  errors = null;
 
   constructor(
-    private itemService: ItemsService,
+    private itemsService: ItemsService,
     public globals: Globals,
     public router: Router
   ) {}
 
   ngOnInit() {
-    this.itemService.getItems().subscribe(
+    this.getItems();
+  }
+
+  getItems() {
+    this.itemsService.getItems().subscribe(
       (result: []) => {
         this.items = result;
       },
       (error) => {
         console.error(error);
+      }
+    );
+  }
+
+  deleteItem(id: Number) {
+    this.itemsService.deleteItem(id).subscribe(
+      (result) => {
+        console.log(result);
+        this.getItems();
+      },
+      (error) => {
+        this.errors = error.error;
+      },
+      () => {
+        // this.itemForm.reset();
       }
     );
   }

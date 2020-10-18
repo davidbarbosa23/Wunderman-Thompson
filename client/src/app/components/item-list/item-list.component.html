@@ -9,5 +9,10 @@
     <p>{{ item.created_at }}</p>
     <p>{{ item.updated_at }}</p>
     <p>{{ item.deleted_at }}</p>
+    <div>
+      <button>Edit</button>
+      <button>Disable</button>
+      <button (click)="deleteItem(item.id)">Delete</button>
+    </div>
   </div>
 </div>
