@@ -66,13 +66,13 @@ $ ng serve -o
 ## Uso de Aplicación
 * __/home__ [localhost:4200](http://localhost:4200)
 ##### Acceso sin auth
-* __/login__ [localhost:4200/login](http://localhost:4200/login) Formulario de ingreso. Teniendo en cuenta la migración de datos para la API, quedará registrado un usuario "guest" para ingresar directamente a las secciones protegidas con autenticación.
+* __/login__ Formulario de ingreso. Teniendo en cuenta la migración de datos para la API, quedará registrado un usuario "guest" para ingresar directamente a las secciones protegidas con autenticación.
   * Email Address: email@email.com
   * Password: 123456
-* __/register__ [localhost:4200/register](http://localhost:4200/register) Formulario de registro.
+* __/register__ Formulario de registro.
 ##### Acceso con auth
-* __/profile__ [localhost:4200/profile](http://localhost:4200/profile) Presentación de usuario.
-* __/items__ [localhost:4200/items](http://localhost:4200/items) 
+* __/profile__ Presentación de usuario.
+* __/items__  
   * All Items: Lista de entradas completa.
   * Active Items: Lista de entradas sin registro de _softDelete_.
     * Trash Button: Enviar item a la papelera.
