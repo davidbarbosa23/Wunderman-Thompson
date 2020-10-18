@@ -15,7 +15,7 @@ export class ItemListComponent implements OnInit {
 
   constructor(
     private itemService: ItemsService,
-    private globals: Globals,
+    public globals: Globals,
     public router: Router
   ) {}
 
