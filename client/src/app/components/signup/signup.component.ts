@@ -1,4 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AuthService } from './../../shared/auth.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -15,10 +16,17 @@ export class SignupComponent implements OnInit {
   errors = null;
 
   constructor(
+    private title: Title,
+    private meta: Meta,
     public router: Router,
     public fb: FormBuilder,
     public authService: AuthService
   ) {
+    this.title.setTitle('Register | Wunderman Thompson');
+    this.meta.updateTag(
+      { name: 'description', content: 'Lorem Ipsum | Wunderman Thompson' },
+      `name='description'`
+    );
     this.registerForm = this.fb.group({
       name: [''],
       email: [''],

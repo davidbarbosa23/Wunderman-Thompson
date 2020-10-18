@@ -1,4 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ItemsService } from './../../services/items.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -18,12 +19,19 @@ export class ItemFormComponent implements OnInit {
   errors = null;
 
   constructor(
+    private title: Title,
+    private meta: Meta,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     public globals: Globals,
     public fb: FormBuilder,
     public itemsService: ItemsService
   ) {
+    this.title.setTitle('Item Form | Wunderman Thompson');
+    this.meta.updateTag(
+      { name: 'description', content: 'Lorem Ipsum | Wunderman Thompson' },
+      `name='description'`
+    );
     this.itemForm = this.fb.group({
       title: [''],
       photo: [''],

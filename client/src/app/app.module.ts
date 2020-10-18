@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 // Commons
 import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
@@ -36,6 +36,7 @@ import { ItemFormComponent } from './components/item-form/item-form.component';
     FormsModule,
   ],
   providers: [
+    Title,
     Globals,
     ItemsService,
     {

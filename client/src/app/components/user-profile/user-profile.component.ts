@@ -1,4 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AuthService } from './../../shared/auth.service';
 import { User } from '../../models/User';
@@ -16,10 +17,17 @@ export class UserProfileComponent implements OnInit {
   UserProfile: User;
 
   constructor(
+    private title: Title,
+    private meta: Meta,
     public authService: AuthService,
     public globals: Globals,
     public router: Router
   ) {
+    this.title.setTitle('Profile | Wunderman Thompson');
+    this.meta.updateTag(
+      { name: 'description', content: 'Lorem Ipsum | Wunderman Thompson' },
+      `name='description'`
+    );
     this.authService.profileUser().subscribe(
       (data: any) => {
         this.UserProfile = data;

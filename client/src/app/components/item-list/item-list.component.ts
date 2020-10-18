@@ -1,4 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ItemsService } from '../../services/items.service';
 import { Item } from '../../models/Item';
@@ -17,10 +18,18 @@ export class ItemListComponent implements OnInit {
   errors = null;
 
   constructor(
+    private title: Title,
+    private meta: Meta,
     private itemsService: ItemsService,
     public globals: Globals,
     public router: Router
-  ) {}
+  ) {
+    this.title.setTitle('List Items | Wunderman Thompson');
+    this.meta.updateTag(
+      { name: 'description', content: 'Lorem Ipsum | Wunderman Thompson' },
+      `name='description'`
+    );
+  }
 
   ngOnInit() {
     this.getItems();
