@@ -24,7 +24,7 @@ export class ItemsService {
     return this.http.get(this.globals.API_URI + '/items/trash');
   }
 
-  getItem(id: String): Observable<Item> {
+  getItem(id: Number): Observable<Item> {
     return this.http.get(`${this.globals.API_URI}/items/${id}`);
   }
 
@@ -32,7 +32,7 @@ export class ItemsService {
     return this.http.post(`${this.globals.API_URI}/items`, item);
   }
 
-  updateItem(id: String, updatedItem: Item): Observable<Item> {
+  updateItem(id: Number, updatedItem: Item): Observable<Item> {
     return this.http.put(`${this.globals.API_URI}/items/${id}`, updatedItem);
   }
 
@@ -44,7 +44,7 @@ export class ItemsService {
     return this.http.delete(`${this.globals.API_URI}/items/${id}/force`);
   }
 
-  restoreItem(id: String) {
-    return this.http.patch(`${this.globals.API_URI}/items/${id}`, {});
+  restoreItem(id: Number) {
+    return this.http.patch(`${this.globals.API_URI}/items/${id}/restore`, {});
   }
 }
