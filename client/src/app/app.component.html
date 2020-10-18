@@ -3,11 +3,12 @@
     <h5 class="my-0 mr-md-auto font-weight-normal">Laravel Angular JWT Auth</h5>
     <nav class="my-2 my-md-0 mr-md-3">
       <a class="p-2 text-dark" routerLink="/">Home</a>
-      <a class="p-2 text-dark" routerLink="/profile" *ngIf="isSignedIn">User Profile</a>
-      <a class="p-2 text-dark" *ngIf="!isSignedIn" routerLink="/login">Log in</a>
-      <a class="p-2 text-dark" *ngIf="!isSignedIn" routerLink="/register">Register</a>
+      <a class="p-2 text-dark" routerLinkActive="active" routerLink="/items" *ngIf="globals.isSignedIn">Items</a>
+      <a class="p-2 text-dark" routerLinkActive="active" routerLink="/profile" *ngIf="globals.isSignedIn">Profile</a>
+      <a class="p-2 text-dark" routerLinkActive="active" routerLink="/login" *ngIf="!globals.isSignedIn" >Login</a>
+      <a class="p-2 text-dark" routerLinkActive="active" routerLink="/register" *ngIf="!globals.isSignedIn">Register</a>
     </nav>
-    <button class="btn btn-outline-primary" (click)="signOut()" *ngIf="isSignedIn">Log out</button>
+    <button class="btn btn-outline-primary" (click)="signOut()" *ngIf="globals.isSignedIn">Logout</button>
   </div>
 </header>
 

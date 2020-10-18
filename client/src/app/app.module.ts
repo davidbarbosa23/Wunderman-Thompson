@@ -15,6 +15,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { ItemListComponent } from './components/item-list/item-list.component';
+import { ItemFormComponent } from './components/item-form/item-form.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     SignupComponent,
     UserProfileComponent,
     HomepageComponent,
+    ItemListComponent,
+    ItemFormComponent,
   ],
   imports: [
     BrowserModule,
