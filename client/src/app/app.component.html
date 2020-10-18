@@ -23,11 +23,11 @@
   </div>
 </nav>
 
-<div [ngClass]="router.url === '/' ? ['container-fluid min-vh-100 bg-primary-light text-white'] : ['container-fluid min-vh-100']">
+<div [ngClass]="router.url === '/' ? ['container-fluid flex-shrink-0 bg-primary-light text-white'] : ['container-fluid flex-shrink-0']">
   <router-outlet></router-outlet>
 </div>
 
-<footer class="bg-primary text-light text-center p-5">
+<footer class="bg-primary text-light text-center p-5 mt-auto">
   <h4 class="m-0">We Inspire Growth</h4>
   <p class="m-0"><small>Data Team @ Wunderman Thompson Co</small></p>
 </footer>

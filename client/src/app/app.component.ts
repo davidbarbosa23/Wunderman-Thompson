@@ -11,7 +11,7 @@ import { Globals } from './shared/globals';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  @HostBinding('class') classes = 'min-vh-100';
+  @HostBinding('class') classes = 'd-flex flex-column h-100';
 
   constructor(
     private auth: AuthStateService,
