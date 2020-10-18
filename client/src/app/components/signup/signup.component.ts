@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
-  @HostBinding('class') classes = 'container';
+  @HostBinding('class') classes = 'signUp row';
 
   registerForm: FormGroup;
   errors = null;

@@ -11,7 +11,7 @@ import { Globals } from '../../shared/globals';
   styleUrls: ['./item-form.component.scss'],
 })
 export class ItemFormComponent implements OnInit {
-  @HostBinding('class') classes = 'container';
+  @HostBinding('class') classes = 'itemForm row';
 
   itemForm: FormGroup;
   edit: boolean = false;

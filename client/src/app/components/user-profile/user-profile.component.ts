@@ -11,7 +11,7 @@ import { Globals } from '../../shared/globals';
   styleUrls: ['./user-profile.component.scss'],
 })
 export class UserProfileComponent implements OnInit {
-  @HostBinding('class') classes = 'container';
+  @HostBinding('class') classes = 'userProfile row';
 
   UserProfile: User;
 

@@ -11,7 +11,7 @@ import { Globals } from '../../shared/globals';
   styleUrls: ['./item-list.component.scss'],
 })
 export class ItemListComponent implements OnInit {
-  @HostBinding('class') classes = 'container';
+  @HostBinding('class') classes = 'itemList row';
 
   items: Item[] = [];
   errors = null;
