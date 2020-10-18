@@ -6,7 +6,7 @@
 </div>
 <div class="col-12 col-sm-6 col-md-4" *ngFor="let item of items">
   <div class="card">
-    <img [src]="item.photo" />
+    <img [src]="item.photo" [alt]="item.title"/>
     <h4>{{ item.title }}</h4>
     <p>{{ item.description }}</p>
     <p>{{ item.created_at }}</p>

@@ -1,18 +1,88 @@
 <section class="col-12">
   <h1>Refarming Economy</h1>
+  <p>
+    Un trabajo de Wunderman Thompson que busca entender cómo las emociones de
+    los colombianos cambian sus comportamientos y afectan la intensión
+  </p>
+  <a class="btn" [routerLink]="globals.isSignedIn ? ['/profile'] : ['/login']"
+    >Ir al Dashboard</a
+  >
 </section>
 <section class="col-12">
   <h2>¿Qué es?</h2>
+  <p>
+    Nuestro proyecto busca traquear esas emociones basándonos en el modelo de
+    <i>Robert Plutchik's</i>, que trabaja con las 8 emociones centrales y cómo
+    su combinación lleva a nuevas emociones.
+  </p>
+  <a class="" [routerLink]="">Ver Teoría</a>
 </section>
 <section class="col-12">
   <h2>¿Por qué?</h2>
+  <p>
+    El significado del valor está cambiando los productos y servicios,
+    básicamente porque ese valor esta siendo dominado por emociones modificando
+    las prioridades y valoraciones de los colombianos.
+  </p>
 </section>
 <section class="col-12">
   <h2>¿Cómo esto ayuda a las marcas?</h2>
+  <p>Esta visión nos ayuda a transformar el journey:</p>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4" *ngFor="let item of items">
+      <div class="home-items">
+        <img [src]="item.photo" [alt]="item.title" />
+        <h4>{{ item.title }}</h4>
+        <p>{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
 </section>
 <section class="col-12">
   <h2>¿Cómo usar el dashboard?</h2>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="home-items">
+        <img src="https://fakeimg.pl/400x400/?text=IMAGE1" alt="Selectores" />
+        <p>
+          1. Usa los diferentes selectores y filtros para ver diferentes
+          resultados.
+        </p>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="home-items">
+        <img src="https://fakeimg.pl/400x400/?text=IMAGE2" alt="Navega" />
+        <p>
+          2. Navega entre las distintas pestañas para encontrar lo que estas
+          buscando.
+        </p>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="home-items">
+        <img src="https://fakeimg.pl/400x400/?text=IMAGE3" alt="Intro" />
+        <p>
+          1. También puedes escuchar los análisis con los principales insights,
+          haciendo clic en el botón de audio.
+        </p>
+      </div>
+    </div>
+  </div>
+  <h5>
+    Ya estas listo para ingresar y visualizar toda la información presentada
+  </h5>
+  <a class="btn" [routerLink]="globals.isSignedIn ? ['/profile'] : ['/login']"
+    >Ir al Dashboard</a
+  >
 </section>
 <section class="col-12">
   <h2>Contacto</h2>
+  <p>
+    Si tienes alguna duda o inquietud por favor no dudes en contactarnos al
+    siguiente correo:
+  </p>
+  <a class="btn" href="mail:data.manager@wundermanthompson.com" target="_blank"
+    >data.manager@wundermanthompson.com</a
+  >
 </section>
