@@ -24,6 +24,7 @@ Route::group(['middleware' => 'api'], function ($router) {
 
     // Items Model
     Route::get('items/all', [ItemsController::class, 'withDeleted']);
+    Route::get('items/all/{items}', [ItemsController::class, 'list']);
     Route::get('items/trash', [ItemsController::class, 'deleted']);
     Route::delete('items/{id}/force', [ItemsController::class, 'hardDestroy']);
     Route::patch('items/{id}/restore', [ItemsController::class, 'restore']);

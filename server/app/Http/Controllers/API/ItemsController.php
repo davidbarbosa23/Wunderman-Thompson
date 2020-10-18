@@ -29,6 +29,18 @@ class ItemsController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @param  int  $items
+     * @return \Illuminate\Http\Response
+     */
+    public function list($items = 10)
+    {
+        //
+        return Item::withTrashed()->paginate((int) $items);
+    }
+
+    /**
      * Display a listing of the resource only Deleted.
      *
      * @return \Illuminate\Http\Response
