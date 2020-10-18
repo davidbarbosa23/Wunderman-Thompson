@@ -10,7 +10,7 @@ export class TokenService {
     register: this.globals.API_URI + '/auth/register',
   };
 
-  constructor(private globals: Globals) { }
+  constructor(private globals: Globals) {}
 
   handleData(token) {
     localStorage.setItem('auth_token', token);
