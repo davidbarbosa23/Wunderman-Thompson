@@ -1,5 +1,8 @@
 <div class="col-12">
   <a class="p-2 text-dark" routerLink="/items/add" *ngIf="globals.isSignedIn">Add Item</a>
+  <button (click)="getItems()">Active Items</button>
+  <button (click)="getAllItems()">All Items</button>
+  <button (click)="getTrashItems()">Trash Items</button>
 </div>
 <div class="col-12 col-sm-6 col-md-4" *ngFor="let item of items">
   <div class="card">
@@ -11,8 +14,9 @@
     <p>{{ item.deleted_at }}</p>
     <div>
       <a [routerLink]="['/items/edit', item.id]">Edit</a>
-      <button>Disable</button>
-      <button (click)="deleteItem(item.id)">Delete</button>
+      <button (click)="deleteItem(item.id)">Trash</button>
+      <button (click)="deleteHardItem(item.id)">Delete</button>
+      <button (click)="restoreItem(item.id)">Restore</button>
     </div>
   </div>
 </div>

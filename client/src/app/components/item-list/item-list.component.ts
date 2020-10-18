@@ -37,6 +37,28 @@ export class ItemListComponent implements OnInit {
     );
   }
 
+  getAllItems() {
+    this.itemsService.getAllItems().subscribe(
+      (result: []) => {
+        this.items = result;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
+  getTrashItems() {
+    this.itemsService.getTrashItems().subscribe(
+      (result: []) => {
+        this.items = result;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
   deleteItem(id: Number) {
     this.itemsService.deleteItem(id).subscribe(
       (result) => {
@@ -45,9 +67,30 @@ export class ItemListComponent implements OnInit {
       },
       (error) => {
         this.errors = error.error;
+      }
+    );
+  }
+
+  deleteHardItem(id: Number) {
+    this.itemsService.deleteHardItem(id).subscribe(
+      (result) => {
+        console.log(result);
+        this.getTrashItems();
       },
-      () => {
-        // this.itemForm.reset();
+      (error) => {
+        this.errors = error.error;
+      }
+    );
+  }
+
+  restoreItem(id: Number) {
+    this.itemsService.restoreItem(id).subscribe(
+      (result) => {
+        console.log(result);
+        this.getItems();
+      },
+      (error) => {
+        this.errors = error.error;
       }
     );
   }
