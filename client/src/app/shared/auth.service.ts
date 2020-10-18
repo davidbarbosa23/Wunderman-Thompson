@@ -4,20 +4,13 @@ import { HttpClient } from '@angular/common/http';
 
 import { Globals } from './globals';
 // User interface
-export class User {
-  name: String;
-  email: String;
-  password: String;
-  password_confirmation: String
-}
+import { User } from '../models/User';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class AuthService {
-
-  constructor(private http: HttpClient, private globals: Globals) { }
+  constructor(private http: HttpClient, private globals: Globals) {}
 
   // User registration
   register(user: User): Observable<any> {
@@ -33,5 +26,4 @@ export class AuthService {
   profileUser(): Observable<any> {
     return this.http.get(this.globals.API_URI + '/auth/user-profile');
   }
-
 }
