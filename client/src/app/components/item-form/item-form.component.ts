@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { ItemsService } from './../../services/items.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./item-form.component.scss'],
 })
 export class ItemFormComponent implements OnInit {
+  @HostBinding('class') classes = 'row';
+
   itemForm: FormGroup;
   errors = null;
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ItemsService } from '../../services/items.service';
 import { Item } from '../../models/Item';
@@ -11,6 +11,8 @@ import { Globals } from '../../shared/globals';
   styleUrls: ['./item-list.component.scss'],
 })
 export class ItemListComponent implements OnInit {
+  @HostBinding('class') classes = 'row';
+
   items: Item[] = [];
 
   constructor(

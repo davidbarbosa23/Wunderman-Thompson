@@ -1,17 +1,13 @@
-<div class="container">
-  <div class="row">
-    <a class="p-2 text-dark" routerLink="/items/add" *ngIf="globals.isSignedIn">Add Item</a>
-  </div>
-  <div class="row">
-    <div class="col-12 col-sm-6 col-md-4" *ngFor="let item of items">
-      <div class="card">
-        <img [src]="item.photo" />
-        <h4>{{ item.title }}</h4>
-        <p>{{ item.description }}</p>
-        <p>{{ item.created_at }}</p>
-        <p>{{ item.updated_at }}</p>
-        <p>{{ item.deleted_at }}</p>
-      </div>
-    </div>
+<div class="col-12">
+  <a class="p-2 text-dark" routerLink="/items/add" *ngIf="globals.isSignedIn">Add Item</a>
+</div>
+<div class="col-12 col-sm-6 col-md-4" *ngFor="let item of items">
+  <div class="card">
+    <img [src]="item.photo" />
+    <h4>{{ item.title }}</h4>
+    <p>{{ item.description }}</p>
+    <p>{{ item.created_at }}</p>
+    <p>{{ item.updated_at }}</p>
+    <p>{{ item.deleted_at }}</p>
   </div>
 </div>

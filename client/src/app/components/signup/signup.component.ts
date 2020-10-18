@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './../../shared/auth.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -9,6 +9,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
+  @HostBinding('class') classes = 'row';
+
   registerForm: FormGroup;
   errors = null;
 

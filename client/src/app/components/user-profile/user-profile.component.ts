@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { AuthService } from './../../shared/auth.service';
 
+import { User } from '../../models/User';
 // User interface
-export class User {
-  name: String;
-  email: String;
-}
 
 @Component({
   selector: 'app-user-profile',
@@ -13,6 +10,8 @@ export class User {
   styleUrls: ['./user-profile.component.scss'],
 })
 export class UserProfileComponent implements OnInit {
+  @HostBinding('class') classes = 'row';
+
   UserProfile: User;
 
   constructor(public authService: AuthService) {
