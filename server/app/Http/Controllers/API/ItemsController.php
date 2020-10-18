@@ -89,7 +89,7 @@ class ItemsController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $item = Item::find($id);
+        $item = Item::withTrashed()->find($id);
         $item->update($request->all());
         return $item;
     }
