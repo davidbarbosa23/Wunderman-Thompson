@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AuthGuard } from './auth/auth.guard';
+
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -10,12 +12,12 @@ import { ItemFormComponent } from './components/item-form/item-form.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
-  { path: 'login', component: SigninComponent },
-  { path: 'register', component: SignupComponent },
-  { path: 'profile', component: UserProfileComponent },
-  { path: 'items', component: ItemListComponent },
-  { path: 'items/add', component: ItemFormComponent },
-  { path: 'items/edit/:id', component: ItemFormComponent },
+  { path: 'login', component: SigninComponent, canActivate:[AuthGuard] },
+  { path: 'register', component: SignupComponent, canActivate:[AuthGuard] },
+  { path: 'profile', component: UserProfileComponent, canActivate:[AuthGuard] },
+  { path: 'items', component: ItemListComponent, canActivate:[AuthGuard] },
+  { path: 'items/add', component: ItemFormComponent, canActivate:[AuthGuard] },
+  { path: 'items/edit/:id', component: ItemFormComponent, canActivate:[AuthGuard] },
 ];
 
 @NgModule({
