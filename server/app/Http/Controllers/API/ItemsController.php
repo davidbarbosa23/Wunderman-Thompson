@@ -76,7 +76,7 @@ class ItemsController extends Controller
     public function show($id)
     {
         //
-        return Item::find($id);
+        return Item::withTrashed()->find($id);
     }
 
     /**
