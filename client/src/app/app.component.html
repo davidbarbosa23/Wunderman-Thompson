@@ -1,18 +1,29 @@
-<header>
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 py-md-4 px-md-6 bg-primary">
-    <a class="my-0 mr-md-auto" routerLink="/"><img src="/assets/logo-wunderman-thompson.svg" alt="Wunderman Thompson"></a>
-    <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-white" routerLink="/">Home</a>
-      <a class="p-2 text-white" routerLinkActive="active" routerLink="/items" *ngIf="globals.isSignedIn">Items</a>
-      <a class="p-2 text-white" routerLinkActive="active" routerLink="/profile" *ngIf="globals.isSignedIn">Profile</a>
-      <a class="p-2 text-white" routerLinkActive="active" routerLink="/login" *ngIf="!globals.isSignedIn" >Login</a>
-      <a class="p-2 text-white" routerLinkActive="active" routerLink="/register" *ngIf="!globals.isSignedIn">Register</a>
-    </nav>
+<nav class="navbar navbar-expand-lg bg-primary p-4 px-md-6 text-light">
+  <a class="navbar-brand" routerLink="/"><img src="/assets/logo-wunderman-thompson.svg" alt="Wunderman Thompson"></a>
+
+  <div class="collapse navbar-collapse" id="navbarToggler">
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link text-light" routerLinkActive="text-primary" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" routerLinkActive="text-primary" routerLink="/items" *ngIf="globals.isSignedIn">Items</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" routerLinkActive="text-primary" routerLink="/profile" *ngIf="globals.isSignedIn">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" routerLinkActive="text-primary" routerLink="/login" *ngIf="!globals.isSignedIn">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" routerLinkActive="text-primary" routerLink="/register" *ngIf="!globals.isSignedIn">Register</a>
+      </li>
+    </ul>
     <button class="btn btn-outline-light" (click)="signOut()" *ngIf="globals.isSignedIn">Logout</button>
   </div>
-</header>
+</nav>
 
-<div [ngClass]="router.url === '/' ? ['container-fluid bg-primary-light text-white'] : ['container-fluid']">
+<div [ngClass]="router.url === '/' ? ['container-fluid min-vh-100 bg-primary-light text-white'] : ['container-fluid min-vh-100']">
   <router-outlet></router-outlet>
 </div>
 

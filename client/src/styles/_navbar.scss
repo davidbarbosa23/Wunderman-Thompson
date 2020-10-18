@@ -1,0 +1,8 @@
+@import '~bootstrap/scss/navbar';
+
+.navbar {
+  z-index: 99;
+  .navbar-toggler-icon svg {
+    fill: $white
+  }
+}

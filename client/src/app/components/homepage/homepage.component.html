@@ -1,14 +1,17 @@
-<section class="row">
-  <div class="container py-8">
-    <div class="row justify-content-center">
-      <div class="col-10 col-md-8 col-lg-5 text-center">
-        <h1>Refarming Economy</h1>
-        <p>
+<div class="row overlay">
+  <img src="/assets/plus-bg.svg" alt="Plus Background" />
+</div>
+<section class="row min-vh-100 mt-md-n5">
+  <div class="container py-5">
+    <div class="row justify-content-center h-100">
+      <div class="col-10 col-md-8 col-lg-5 align-self-center text-center">
+        <h1 class="display-3 font-weight-bolder pb-3">Refarming Economy</h1>
+        <p class="pb-4">
           Un trabajo de Wunderman Thompson que busca entender cómo las emociones
           de los colombianos cambian sus comportamientos y afectan la intensión
         </p>
         <a
-          class="btn btn-secondary px-4"
+          class="btn btn-lg btn-secondary px-4"
           [routerLink]="globals.isSignedIn ? ['/profile'] : ['/login']"
           ><b>Ir al Dashboard</b></a
         >
@@ -16,21 +19,23 @@
     </div>
   </div>
 </section>
-<section class="row">
+<section class="row min-vh-100">
   <div class="container">
-    <div class="row">
-      <div class="col">
-        <h2>¿Qué es?</h2>
+    <div class="row mh-100 py-5">
+      <div
+        class="col-12 col-sm-6 col-md-4 align-self-sm-center text-center text-sm-left z-index-up"
+      >
+        <h2 class="display-4 font-weight-bolder">¿Qué es?</h2>
         <p>
           Nuestro proyecto busca traquear esas emociones basándonos en el modelo
           de <i>Robert Plutchik's</i>, que trabaja con las 8 emociones centrales
           y cómo su combinación lleva a nuevas emociones.
         </p>
-        <a class="" [routerLink]="">Ver Teoría</a>
+        <a class="text-light" [routerLink]="">Ver Teoría</a>
       </div>
-      <div class="col">
+      <div class="col align-self-sm-center">
         <img
-          class="img-fluid"
+          class="img-fluid transform-25"
           src="https://fakeimg.pl/1024x618/?text=WHAT"
           alt="Qué es"
         />
@@ -38,20 +43,22 @@
     </div>
   </div>
 </section>
-<section class="row">
+<section class="row min-vh-100">
   <div class="container">
-    <div class="row">
-      <div class="col">
-        <h2>¿Por qué?</h2>
+    <div class="row mh-100 py-5">
+      <div
+        class="col-12 col-sm-6 col-md-4 order-sm-1 align-self-sm-center text-center text-sm-right z-index-up"
+      >
+        <h2 class="display-4 font-weight-bolder">¿Por qué?</h2>
         <p>
           El significado del valor está cambiando los productos y servicios,
           básicamente porque ese valor esta siendo dominado por emociones
           modificando las prioridades y valoraciones de los colombianos.
         </p>
       </div>
-      <div class="col">
+      <div class="col order-sm-0 align-self-sm-center">
         <img
-          class="img-fluid"
+          class="img-fluid transform-25"
           src="https://fakeimg.pl/1024x618/?text=WHY"
           alt="Por qué"
         />
@@ -59,17 +66,17 @@
     </div>
   </div>
 </section>
-<section class="row bg-secondary">
+<section class="row min-vh-100 bg-secondary">
   <div class="container">
-    <div class="row text-center">
+    <div class="row mh-100 py-5 text-center">
       <div class="col">
-        <h2>¿Cómo esto ayuda a las marcas?</h2>
-        <p>Esta visión nos ayuda a transformar el journey:</p>
+        <h2 class="display-4 font-weight-bolder pb-4">¿Cómo esto ayuda a las marcas?</h2>
+        <p class="pb-4">Esta visión nos ayuda a transformar el journey:</p>
         <div class="row justify-content-center">
           <div class="col-12 col-sm-6 col-md-4" *ngFor="let item of items">
-            <div class="home-items">
-              <img class="img-fluid" [src]="item.photo" [alt]="item.title" />
-              <h4>{{ item.title }}</h4>
+            <div class="home-items py-4">
+              <img class="img-fluid rounded-circle" [src]="item.photo" [alt]="item.title" />
+              <h5 class="font-weight-bold mt-3">{{ item.title }}</h5>
               <p>{{ item.description }}</p>
             </div>
           </div>
@@ -78,58 +85,58 @@
     </div>
   </div>
 </section>
-<section class="row">
+<section class="row min-vh-100">
   <div class="container">
-    <div class="row text-center">
+    <div class="row mh-100 py-5 text-center">
       <div class="col">
-        <h2>¿Cómo usar el dashboard?</h2>
+        <h2 class="display-4 font-weight-bolder pb-4">¿Cómo usar el dashboard?</h2>
         <div class="row justify-content-center">
           <div class="col-12 col-sm-6 col-md-4">
-            <div class="home-items">
+            <div class="home-items py-4">
               <img
                 class="img-fluid"
                 src="https://fakeimg.pl/400x400/?text=IMAGE1"
                 alt="Selectores"
               />
-              <p>
+              <p class="p-4">
                 1. Usa los diferentes selectores y filtros para ver diferentes
                 resultados.
               </p>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-md-4">
-            <div class="home-items">
+            <div class="home-items py-4">
               <img
                 class="img-fluid"
                 src="https://fakeimg.pl/400x400/?text=IMAGE2"
                 alt="Navega"
               />
-              <p>
+              <p class="p-4">
                 2. Navega entre las distintas pestañas para encontrar lo que
                 estas buscando.
               </p>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-md-4">
-            <div class="home-items">
+            <div class="home-items py-4">
               <img
                 class="img-fluid"
                 src="https://fakeimg.pl/400x400/?text=IMAGE3"
                 alt="Intro"
               />
-              <p>
+              <p class="p-4">
                 1. También puedes escuchar los análisis con los principales
                 insights, haciendo clic en el botón de audio.
               </p>
             </div>
           </div>
         </div>
-        <h5>
+        <h5 class="font-weight-bold py-4">
           Ya estas listo para ingresar y visualizar toda la información
           presentada
         </h5>
         <a
-          class="btn"
+          class="btn btn-lg btn-secondary px-4"
           [routerLink]="globals.isSignedIn ? ['/profile'] : ['/login']"
           ><b>Ir al Dashboard</b></a
         >
@@ -140,9 +147,9 @@
 
 <section class="row">
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center py-5">
       <div class="col-10 col-md-8 col-lg-5 text-center">
-        <h2>Contacto</h2>
+        <h2 class="display-4 font-weight-bolder pb-4">Contacto</h2>
         <p>
           Si tienes alguna duda o inquietud por favor no dudes en contactarnos
           al siguiente correo:

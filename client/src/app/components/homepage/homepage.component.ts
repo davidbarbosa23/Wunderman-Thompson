@@ -11,7 +11,7 @@ import { Globals } from '../../shared/globals';
   styleUrls: ['./homepage.component.scss'],
 })
 export class HomepageComponent implements OnInit {
-  @HostBinding('class') classes = 'homePage';
+  @HostBinding('class') classes = 'homePage min-vh-100';
 
   items: Item[] = [];
 

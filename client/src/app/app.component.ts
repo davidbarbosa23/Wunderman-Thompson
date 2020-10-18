@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from './shared/token.service';
 import { AuthStateService } from './shared/auth-state.service';
@@ -11,6 +11,8 @@ import { Globals } from './shared/globals';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  @HostBinding('class') classes = 'min-vh-100';
+
   constructor(
     private auth: AuthStateService,
     public globals: Globals,
